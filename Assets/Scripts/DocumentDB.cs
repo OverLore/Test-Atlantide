@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//This class is loaded before all other classes 
+//Modifiable in Project Settings => Script Execution Order
+//This is used to prevent from initiate any class before the database has been loaded
 public class DocumentDB : MonoBehaviour
 {
     public static DocumentDB Instance;
