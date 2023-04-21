@@ -64,10 +64,24 @@ public class InventorySaver : MonoBehaviour
         return documentDatas.Exists(x => x.id == document.documentId && x.isNew);
     }
 
+    public void OrderByDate()
+    {
+        documentDatas.Sort((x, y) => y.obtainedOn.CompareTo(x.obtainedOn));
+    }
+
+    public List<DocumentData> GetSortedDocuments()
+    {
+        OrderByDate();
+
+        return documentDatas;
+    }
+
     public void Save()
     {
         if (documentDatas == null)
             documentDatas = new List<DocumentData>();
+
+        OrderByDate();
 
         using (StreamWriter sw = new StreamWriter(Application.persistentDataPath + "/save.dat"))
         {
@@ -83,6 +97,8 @@ public class InventorySaver : MonoBehaviour
 
             documentDatas = JsonHelper.FromJson<DocumentData>(lines);
         }
+
+        OrderByDate();
     }
 
     public DocumentData GetDocument(Document document)

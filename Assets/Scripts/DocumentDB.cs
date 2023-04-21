@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Document;
 
 //This class is loaded before all other classes 
 //Modifiable in Project Settings => Script Execution Order
@@ -61,10 +62,9 @@ public class DocumentDB : MonoBehaviour
     {
         List<Document> unlockedDocuments = new List<Document>();
 
-        foreach (Document document in documents)
+        foreach (DocumentData documentData in InventorySaver.Instance.GetSortedDocuments())
         {
-            if (InventorySaver.Instance.IsUnlocked(document))
-                unlockedDocuments.Add(Instantiate(document));
+            unlockedDocuments.Add(GetDocument(documentData.id));
         }
 
         return unlockedDocuments;
