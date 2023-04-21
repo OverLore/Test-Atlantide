@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d558da46a77749489966e375da9d582, type: 3}
-  m_Name: TalkieWalkie
+  m_Name: Medal
   m_EditorClassIdentifier: 
-  documentName: Talkie Walkie
-  documentId: walkie_talkie
-  documentDescription: Talkie Walkie pour rester en communication avec la <color=green>capitaine
-    M.
-  documentIcon: {fileID: 21300000, guid: a7cc20acfc246de46bfec8777b06a2b7, type: 3}
+  documentName: "M\xE9daille"
+  documentId: medal
+  documentDescription: "Une jolie <color=yellow>m\xE9daille"
+  documentIcon: {fileID: 21300000, guid: f5b061285fdff85449963d60ecd72b14, type: 3}

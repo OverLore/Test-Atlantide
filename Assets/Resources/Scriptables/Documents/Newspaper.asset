@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   documentName: Journal
   documentId: newspaper
-  documentDescription: "Journal du jour donn\xE9 par la capitaine M."
+  documentDescription: "Journal du jour donn\xE9 par la <color=green>capitaine M."
   documentIcon: {fileID: 21300000, guid: 3b4fd27b427d9d040b096927db8fc2f5, type: 3}
