@@ -5,9 +5,9 @@ using UnityEngine;
 public class PanelBase : MonoBehaviour
 {
     protected CanvasGroup canvasGroup;
-    protected PanelTransiter panelTransiter;
+    public PanelTransiter panelTransiter;
 
-    protected bool isShown;
+    public bool isShown;
 
     protected virtual void Start()
     {
@@ -20,12 +20,12 @@ public class PanelBase : MonoBehaviour
         SetCanvasVisibility(false);
     }
 
-    private void OnTransitionStart()
+    protected virtual void OnTransitionStart()
     {
         SetCanvasVisibility(true);
     }
 
-    private void OnTransitionComplete()
+    protected virtual void OnTransitionComplete()
     {
         isShown = !isShown;
 

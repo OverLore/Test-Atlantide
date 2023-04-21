@@ -10,4 +10,12 @@ public class Document : ScriptableObject
     public string documentId;
     [TextArea] public string documentDescription;
     public Sprite documentIcon;
+
+    [System.Serializable]
+    public class DocumentData
+    {
+        public string id;
+        public bool isNew;
+        public long obtainedOn;
+    }
 }

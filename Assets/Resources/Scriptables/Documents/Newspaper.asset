@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d558da46a77749489966e375da9d582, type: 3}
-  m_Name: TalkieWalkie
+  m_Name: Newspaper
   m_EditorClassIdentifier: 
-  documentName: Talkie Walkie
-  documentId: walkie_talkie
-  documentDescription: Talkie Walkie pour rester en communication avec la capitaine
-    M.
-  documentIcon: {fileID: 21300000, guid: a7cc20acfc246de46bfec8777b06a2b7, type: 3}
+  documentName: Journal
+  documentId: newspaper
+  documentDescription: "Journal du jour donn\xE9 par la capitaine M."
+  documentIcon: {fileID: 21300000, guid: 3b4fd27b427d9d040b096927db8fc2f5, type: 3}

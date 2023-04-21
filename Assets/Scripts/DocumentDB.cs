@@ -41,6 +41,35 @@ public class DocumentDB : MonoBehaviour
         return allDocuments;
     }
 
+    public Document GetRandomLockedDocument()
+    {
+        List<Document> lockedDocuments = new List<Document>();
+
+        foreach (Document document in documents)
+        {
+            if (!InventorySaver.Instance.IsUnlocked(document))
+                lockedDocuments.Add(Instantiate(document));
+        }
+
+        if (lockedDocuments.Count == 0)
+            return null;
+
+        return lockedDocuments[Random.Range(0, lockedDocuments.Count)];
+    }
+
+    public List<Document> GetAllUnlockedDocument()
+    {
+        List<Document> unlockedDocuments = new List<Document>();
+
+        foreach (Document document in documents)
+        {
+            if (InventorySaver.Instance.IsUnlocked(document))
+                unlockedDocuments.Add(Instantiate(document));
+        }
+
+        return unlockedDocuments;
+    }
+
     public int GetDocumentCount()
     {
         return documents.Count;

@@ -10,6 +10,7 @@ public class DocumentPanelController : PanelBase
     [SerializeField] private TMP_Text nameTxt;
     [SerializeField] private TMP_Text descriptionTxt;
     [SerializeField] private Image iconImg;
+    [SerializeField] InventoryPanelController inventoryPanelController;
 
     private Document document;
 
@@ -19,6 +20,20 @@ public class DocumentPanelController : PanelBase
         descriptionTxt.text = document ? document.documentDescription : string.Empty;
         iconImg.sprite = document ? document.documentIcon : null;
         iconImg.color = document ? Color.white : Color.clear;
+    }
+
+    protected override void OnTransitionComplete()
+    {
+        base.OnTransitionComplete();
+
+        if (isShown)
+        {
+            InventorySaver.Instance.UpdateDocument(document, false);
+
+            inventoryPanelController.RefreshList();
+
+            Debug.Log("Refresh");
+        }
     }
 
     public void ShowDocument(Document document)
