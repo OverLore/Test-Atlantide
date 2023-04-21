@@ -50,8 +50,6 @@ public class PanelTransiter : MonoBehaviour
 
         OnTransitionStart?.Invoke();
 
-        float transitionFactor = type == TransitionType.SlideIn ? 1f : -1f;
-
         Vector2 from = type == TransitionType.SlideIn ? startPosition : endPosition;
         Vector2 to = type == TransitionType.SlideIn ? endPosition : startPosition;
 
@@ -62,12 +60,12 @@ public class PanelTransiter : MonoBehaviour
             transitionTimer += Time.deltaTime;
             transitionProgress = (1 - Mathf.Cos(transitionTimer / transitionTime * Mathf.PI)) * .5f;
             
-            panelRectTransform.anchoredPosition = Vector3.Slerp(startPosition, endPosition, transitionProgress);
+            panelRectTransform.anchoredPosition = Vector3.Slerp(from, to, transitionProgress);
 
             yield return null;
         }
 
-        panelRectTransform.anchoredPosition = endPosition;
+        panelRectTransform.anchoredPosition = to;
 
         isTransitioning = false;
 
