@@ -12,6 +12,11 @@ public class InventoryPanelController : PanelBase
 
     private List<DocumentElement> documentElements = new List<DocumentElement>();
 
+    private void Awake()
+    {
+        Application.targetFrameRate = 60;
+    }
+
     public override void Show()
     {
         base.Show();

@@ -28,9 +28,11 @@ public class PanelTransiter : MonoBehaviour
     public Action OnTransitionStart;
     public Action OnTransitionComplete;
 
+    private float defaultScreenSize = 2340;
+
     private void Start()
     {
-        startPosition = new Vector2(0f, -Screen.height);
+        startPosition = new Vector2(0f, -defaultScreenSize * (defaultScreenSize / Screen.height));
         endPosition = new Vector2(0f, 0f);
 
         panelRectTransform.anchoredPosition = startPosition;
